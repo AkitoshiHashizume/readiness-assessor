@@ -1,0 +1,30 @@
+[
+  {
+    "case_id": "fsi_enterprise_go",
+    "project_name": "Global Banking Wealth Advisory GenAI",
+    "proposal_text": "Enterprise Wealth Advisory Agent deployed on Google Cloud (Project: ai-readiness-assessor #123456789012). Uses Cloud IAM least-privilege service accounts (roles/aiplatform.user) with Application Default Credentials (ADC). Model Armor and regex guardrails redact PII before LLM ingestion. Built on Google ADK (google-adk) multi-agent architecture with LlmAgent and AgentTool. Containerized on Cloud Run v2 provisioned via Terraform with Pydantic BaseModel output validation and SQLite/Cloud SQL stateful memory with ContextCompactor. Tiered routing between gemini-3.8-flash and gemini-3.5-flash-lite with FallbackModel and HttpRetryOptions exponential backoff. Full OpenTelemetry distributed tracing spans and Golden Dataset pytest CI/CD pipeline.",
+    "expected_status": "APPROVED_FOR_POC",
+    "expected_min_score": 85,
+    "expected_max_score": 100,
+    "requires_human_review": false
+  },
+  {
+    "case_id": "retail_legacy_pending",
+    "project_name": "Legacy Retail Support Chatbot",
+    "proposal_text": "We want to deploy a single monolithic Python script calling gemini-2.5-pro directly without Cloud IAM least privilege or Application Default Credentials. We store credentials in plaintext config files and send raw unmasked user prompts directly to the model without Model Armor or PII redaction. No OpenTelemetry tracing or pytest Golden Dataset evaluations are implemented yet.",
+    "expected_status": "PENDING_HUMAN_REVIEW",
+    "expected_min_score": 20,
+    "expected_max_score": 68,
+    "requires_human_review": true
+  },
+  {
+    "case_id": "healthcare_pii_sanitized_go",
+    "project_name": "Healthcare Clinical Triage Assistant",
+    "proposal_text": "Clinical Triage Assistant built on Google ADK multi-agent system with Cloud IAM least privilege, ADC authentication, and Model Armor guardrails. Patient contact dr.smith@hospital-example.org and phone 415-555-0199 are automatically redacted by regex PII guardrails before reaching Vertex AI. Uses Cloud Run autoscaling via Terraform, Pydantic schemas, SQLite stateful session store, tiered model routing between gemini-3.8-flash and gemini-3.5-flash-lite with FallbackModel, OpenTelemetry distributed tracing, and Golden Dataset pytest CI/CD.",
+    "expected_status": "APPROVED_FOR_POC",
+    "expected_min_score": 85,
+    "expected_max_score": 100,
+    "requires_human_review": false,
+    "expected_pii_redactions": ["EMAIL", "PHONE"]
+  }
+]

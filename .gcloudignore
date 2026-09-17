@@ -1,0 +1,14 @@
+.git
+.gitignore
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.db
+terraform/.terraform/
+terraform/*.tfstate*
+terraform/.terraform.lock.hcl
+*.tfvars
+terraform/*.tfvars
+docs/
+tests/

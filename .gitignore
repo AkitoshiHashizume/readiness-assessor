@@ -1,0 +1,39 @@
+# Virtual environments & bytecode
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment variables & Secrets
+.env
+*.pem
+*.key
+service_account*.json
+
+# Local SQLite database & state
+*.db
+*.sqlite
+*.sqlite3
+
+# Terraform local state, cache, & local variable overrides (any directory)
+**/.terraform/
+*.tfstate
+*.tfstate.*
+**/.terraform.lock.hcl
+*.tfvars
+**/*.tfvars
+
+# Internal working docs & git hooks
+docs/
+.gitallowed
+
+# OS / IDE files
+.DS_Store
+.vscode/
+.idea/
